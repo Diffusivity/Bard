@@ -24,7 +24,7 @@
 
   function recognized (text) {
     var rec = document.getElementById('conversation');
-    rec.innerHTML = '<div class="recognized"><div>' + text + '</div></div>';
+    rec.innerHTML += '<div class="recognized"><div>' + text + '</div></div>';
   }
 
   if (annyang) {
