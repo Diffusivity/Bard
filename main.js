@@ -33,6 +33,18 @@
       'stop': function() {
         audio.pause();
       },
+        'set volume to *level (percent)': function(level) {
+        audio.volume = (level/100); 
+       recognized('volume set to ' + ((audio.volume)*100)+'%');
+      },
+      '(turn) volume up': function() {
+        audio.volume += 0.1;
+          recognized('volume raised to ' + ((audio.volume)*100)+'%');
+      },
+        '(turn) volume down': function() {
+        audio.volume -= 0.1;
+        recognized('volume lowered to ' + ((audio.volume)*100)+'%');
+      },
       'play track *song': function(song) {
         recognized('Play track ' + song);
         playSong(song);
