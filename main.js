@@ -91,6 +91,7 @@
 'How about *song by *artist': function(song) {
         recognized('Play ' + song);
         playSong(song);
+},
       ':nomatch': function (message) { recognized(message); communicateAction('Sorry, I don\'t understand this action'); }
     };
 
