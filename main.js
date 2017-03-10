@@ -1,8 +1,6 @@
 (function() {
   var audio = new Audio(),
-      audio.volume = 0.5,
       spotifyApi = new SpotifyWebApi();
-
   function playSong (songName, artistName) {
     var query = songName;
     if (artistName) {
@@ -93,6 +91,7 @@
 'How about *song by *artist': function(song) {
         recognized('Play ' + song);
         playSong(song);
+},
       ':nomatch': function (message) { recognized(message); communicateAction('Sorry, I don\'t understand this action'); }
     };
 
