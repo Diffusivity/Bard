@@ -1,5 +1,6 @@
 (function() {
   var audio = new Audio(),
+      audio.volume = 0.5,
       spotifyApi = new SpotifyWebApi();
 
   function playSong (songName, artistName) {
@@ -19,7 +20,7 @@
 
   function communicateAction (text) {
     var rec = document.getElementById('conversation');
-    rec.innerHTML += '<div class="action">' + text + '</div>';
+    rec.innerHTML = '<div class="action">' + text + '</div>';
   }
 
   function recognized (text) {
@@ -61,7 +62,37 @@
         recognized('Play ' + song);
         playSong(song);
       },
-
+'let\'s hear *song': function(song) {
+        recognized('Play ' + song);
+        playSong(song);
+      },
+'give me *song': function(song) {
+        recognized('Play ' + song);
+        playSong(song);
+      },
+'I need *song': function(song) {
+        recognized('Play ' + song);
+        playSong(song);
+      },
+'How about *song': function(song) {
+        recognized('Play ' + song);
+        playSong(song);
+      },
+        'let\'s hear *song by *artist': function(song) {
+        recognized('Play ' + song);
+        playSong(song);
+      },
+'give me *song by *artist': function(song) {
+        recognized('Play ' + song);
+        playSong(song);
+      },
+'I need *song by *artist': function(song) {
+        recognized('Play ' + song);
+        playSong(song);
+      },
+'How about *song by *artist': function(song) {
+        recognized('Play ' + song);
+        playSong(song);
       ':nomatch': function (message) { recognized(message); communicateAction('Sorry, I don\'t understand this action'); }
     };
 
