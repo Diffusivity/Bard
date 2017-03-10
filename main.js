@@ -1,8 +1,7 @@
 (function() {
   var audio = new Audio(),
-      audio.volume = 0.5,
       spotifyApi = new SpotifyWebApi();
-
+audio.volume= 0.5 ;
   function playSong (songName, artistName) {
     var query = songName;
     if (artistName) {
